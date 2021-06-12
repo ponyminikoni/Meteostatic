@@ -15,22 +15,38 @@ struct ContentView: View {
         ZStack {
             Color(.systemBackground)
                 .ignoresSafeArea()
-            VStack(spacing: width / 3) {
+            VStack {
+                Spacer()
                 Text("City")
-                    .font(.custom("Courier New", size: 30))
+                    .shadow(radius: 30)
+                    .font(.custom("Copperplate", size: 24))
                     .opacity(0.5)
-                Image("sun")
-                    .renderingMode(.original)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: width / 1.5, height: width / 1.5, alignment: .center)
-                HStack(spacing: width / 2.5) {
-                    Text("Temp")
-                    Text("Wind")
+                Spacer()
+                WeatherIconView(scale: 0.7, name: "02d")
+                Spacer()
+                VStack() {
+                    HStack {
+                        Image(systemName: "thermometer")
+                        Text("25")
+                    }
+                    .padding()
+                    Text("Clear Sky")
                 }
-                .font(.custom("Courier New", size: 20))
+                .font(.custom("Copperplate", size: 18))
+                Spacer()
+                VStack {
+                    Button(action: {}) {
+                        DailyForecastView(iconName: "01n", day: "Today", temp: 24)
+                    }
+                    Button(action: {}) {
+                        DailyForecastView(iconName: "13d", day: "Tomarow", temp: 18)
+                    }
+                    DailyForecastView(iconName: "04n", day: "Wednesday", temp: 19)
+                }
             }
         }
+        .padding()
+        .font(.custom("Copperplate", size: 14))
     }
 }
 
