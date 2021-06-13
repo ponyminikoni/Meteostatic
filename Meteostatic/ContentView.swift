@@ -32,21 +32,23 @@ struct ContentView: View {
                     .padding()
                     Text("Clear Sky")
                 }
+                .opacity(0.5)
                 .font(.custom("Copperplate", size: 18))
                 Spacer()
                 VStack {
                     Button(action: {}) {
                         DailyForecastView(iconName: "01n", day: "Today", temp: 24)
+                            .shadow(radius: 10)
                     }
                     Button(action: {}) {
-                        DailyForecastView(iconName: "13d", day: "Tomarow", temp: 18)
+                        DailyForecastView(iconName: "13d", day: "Tomorrow", temp: 18)
                     }
                     DailyForecastView(iconName: "04n", day: "Wednesday", temp: 19)
                 }
+                .font(.custom("Copperplate", size: 14))
+                .padding()
             }
         }
-        .padding()
-        .font(.custom("Copperplate", size: 14))
     }
 }
 
