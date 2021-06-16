@@ -15,14 +15,18 @@ struct ContentView: View {
         ZStack {
             Color(.systemBackground)
                 .ignoresSafeArea()
-            VStack {
+            VStack(spacing: 25) {
                 Spacer()
-                Text("City")
-                    .shadow(radius: 30)
-                    .font(.custom("Copperplate", size: 24))
-                    .opacity(0.5)
+                VStack {
+                    Text("City")
+                        .shadow(radius: 30)
+                        .font(.custom("Copperplate", size: 24))
+                        .opacity(0.5)
+                }
                 Spacer()
-                WeatherIconView(scale: 0.7, name: "02d")
+                VStack {
+                WeatherIconView(scale: 0.7, name: "50d")
+                }
                 Spacer()
                 VStack() {
                     HStack {
@@ -35,18 +39,6 @@ struct ContentView: View {
                 .opacity(0.5)
                 .font(.custom("Copperplate", size: 18))
                 Spacer()
-                VStack {
-                    Button(action: {}) {
-                        DailyForecastView(iconName: "01n", day: "Today", temp: 24)
-                            .shadow(radius: 10)
-                    }
-                    Button(action: {}) {
-                        DailyForecastView(iconName: "13d", day: "Tomorrow", temp: 18)
-                    }
-                    DailyForecastView(iconName: "04n", day: "Wednesday", temp: 19)
-                }
-                .font(.custom("Copperplate", size: 14))
-                .padding()
             }
         }
     }
