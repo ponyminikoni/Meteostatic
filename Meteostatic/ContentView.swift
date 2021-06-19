@@ -25,8 +25,9 @@ struct ContentView: View {
                 }
                 Spacer()
                 VStack {
-                WeatherIconView(scale: 0.7, name: "11d")
-                    .shadow(radius: 10)
+                WeatherIconView(scale: 0.7, name: "50d")
+                    .shadow(radius: 2)
+                    WeatherIconView(scale: 0.2, name: "13d")
                 }
                 Spacer()
                 VStack() {
